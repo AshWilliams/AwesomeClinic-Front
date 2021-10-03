@@ -13,7 +13,7 @@ const MenuBar = () => {
                 <ul className="menu">
                     <li><a href="/">Home</a></li>
                     <li><a href="/MyProfile">My Profile</a></li>
-                    <li><a href="/MyApointements">My Appointments</a></li>                
+                    <li><a href="/MyAppointments">My Appointments</a></li>                
                 </ul>
             </div>
         </nav>

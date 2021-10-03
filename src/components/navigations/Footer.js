@@ -9,8 +9,8 @@ const MenuBar = () => {
             <div className="footer">
                 <ul>
                     <li><Link to="/">Home</Link></li>
-                    <li><Link href="/AboutUs">About Us</Link></li>
-                    <li><Link to="/ContactUs">Contact Us</Link></li>
+                    <li><Link href="/MyProfile">My Profile</Link></li>
+                    <li><Link to="/MyApointements">My Appointments</Link></li>
                 </ul>
 
                 <ul className="social">
@@ -31,7 +31,7 @@ const MenuBar = () => {
                     </li>
                 </ul>
 
-                <p>&copy; Your Name/Company. All rights reserved.</p>
+                <p>&copy; Awesome Clinic. All rights reserved.</p>
             </div>
         </footer>
     )

@@ -7,7 +7,7 @@ import {
 import Layout from './layout/Layout'
 import Home from './components/pages/Home'
 import MyProfile from './components/pages/MyProfile'
-import MyApointements from './components/pages/MyApointements'
+import MyAppointments from './components/pages/MyAppointments'
 
 import './App.css';
 
@@ -18,7 +18,7 @@ function App() {
         <Layout>
           <Switch>
             <Route path={'/MyProfile'} component={MyProfile}></Route>
-            <Route path={'/MyApointements'} component={MyApointements}></Route>
+            <Route path={'/MyAppointments'} component={MyAppointments}></Route>
             <Route path={'/'} component={Home}></Route>
           </Switch>
         </Layout>

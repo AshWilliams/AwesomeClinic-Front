@@ -14,15 +14,9 @@ const Home = () => {
                 </div>
                 <div className="cust-container">
                     <img src={user1} alt="Avatar" style={{width:"90px"}}/>
-                    <p><span>John Doe.</span> Content Writer.</p>
-                    <p>Great attention to detail!</p>
-                </div>
-
-                <div className="cust-container">
-                    <img src={user2} alt="Avatar" style={{width:"90px"}}/>
-                    <p><span>Rebecca Flex.</span> Reporter</p>
-                    <p>Nice enviroment to run my personal projects.</p>
-                </div>
+                    <p><span>John Doe.</span></p>
+                    <p>Great clinic!</p>
+                </div>                
             </section>
         </React.Fragment>
     )
