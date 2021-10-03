@@ -17,4 +17,6 @@ This is to install all the dependencies required to run the library.
 
 4. head to localhost:3000 to check out the application
 
+Docker Image Name: `ashwilliams/awesome-clinic-front:react`
+
 

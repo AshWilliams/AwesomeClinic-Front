@@ -1,6 +1,5 @@
 import React from 'react'
 import user1 from '../../images/patrick.png'
-import user2 from '../../images/nan.jpg'
 import './Testimonials.css'
 
 
