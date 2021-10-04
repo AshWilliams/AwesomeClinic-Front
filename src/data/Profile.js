@@ -11,11 +11,9 @@ export default class Profile extends React.Component {
 
   componentDidMount() {
     let backendUrl = "https://jsonplaceholder.typicode.com/users/1";
-    console.log(process.env);
-    if('REACT_APP_BACKEND_URL' in process.env){
+     if('REACT_APP_BACKEND_URL' in process.env){
       backendUrl = "http://" + process.env.REACT_APP_BACKEND_URL + "/profile/";
     }
-    console.log(backendUrl);
     axios.get(backendUrl)
       .then(res => {
         const person = res.data;

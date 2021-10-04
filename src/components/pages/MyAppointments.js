@@ -11,9 +11,20 @@ const MyAppointments = () => {
 
                 <div className="block">
                     <div className="row">
-                        <div className="col-left">
+                    <table className="styled-table">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Doctor</th>
+                                <th>Specialty</th>
+                                <th>Branch</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
                             <AppointmentList/>
-                        </div>
+                        </tbody>
+                    </table>
                     </div>
                 </div>
             </section>
