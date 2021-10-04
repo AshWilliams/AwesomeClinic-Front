@@ -36,13 +36,16 @@ export default class Profile extends React.Component {
               <input placeholder="Your Name" type="text" tabIndex="1" disabled value={ this.state.person.doctor_name?this.state.person.doctor_name : this.state.person.name } />
           </fieldset>
           <fieldset>
+              <input placeholder="Address" type="email" tabIndex="3" disabled value={ this.state.person.address  } />
+          </fieldset>
+          <fieldset>
               <input placeholder="Phone" type="text" tabIndex="2" disabled value={ this.state.person.phone  } />
           </fieldset>
           <fieldset>
-              <input placeholder="Your Email Address" type="email" tabIndex="3" disabled />
+              <input placeholder="Your Email Address" type="email" tabIndex="3" disabled value={ this.state.person.email  } />
           </fieldset>
           <fieldset>
-              <input placeholder="Member Since" type="tel" tabIndex="4" disabled />
+              <input placeholder="Member Since" type="tel" tabIndex="4" disabled value={ this.state.person.member_since  } />
           </fieldset>                                
           <fieldset>
               <button name="submit" type="submit" id="contact-submit" data-submit="...Sending" disabled>Submit</button>
