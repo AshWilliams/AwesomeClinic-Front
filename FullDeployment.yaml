@@ -22,6 +22,7 @@ spec:
       containers:
       - name: awesome-clinic-backend
         image: ashwilliams/awesome-clinic-backend:flask
+        imagePullPolicy: Always
         ports:
         - containerPort: 5000
 ---
@@ -55,6 +56,7 @@ spec:
       containers:
       - name: awesome-clinic-frontend
         image: ashwilliams/awesome-clinic-front:react
+        imagePullPolicy: Always
         ports:
         - containerPort: 8080
         env:
