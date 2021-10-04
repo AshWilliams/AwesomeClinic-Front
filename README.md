@@ -15,8 +15,13 @@ This is to install all the dependencies required to run the library.
 
 > yarn start
 
-4. head to localhost:3000 to check out the application
+4. To run test from `src/test` folder
 
-Docker Image Name: `ashwilliams/awesome-clinic-front:react`
+> yarn test
+
+5. Head to `localhost:3000` to check out the application
+
+Docker Image Frontend: `ashwilliams/awesome-clinic-front:react` https://hub.docker.com/repository/docker/ashwilliams/awesome-clinic-front
+Docker Image Backend: `ashwilliams/awesome-clinic-backend:flask` https://hub.docker.com/repository/docker/ashwilliams/awesome-clinic-backend
 
 
