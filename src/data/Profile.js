@@ -4,18 +4,23 @@ import axios from 'axios';
 
 export default class Profile extends React.Component {
   state = {
-    person: {}
+    person: {},
+    backendUrl:""
   }
+  
 
   componentDidMount() {
     let backendUrl = "https://jsonplaceholder.typicode.com/users/1";
-    if(process.env.BACKEND_URL){
-      backendUrl = process.env.BACKEND_URL+"/profile";
+    console.log(process.env);
+    if('REACT_APP_BACKEND_URL' in process.env){
+      backendUrl = "http://" + process.env.REACT_APP_BACKEND_URL + "/profile/";
     }
+    console.log(backendUrl);
     axios.get(backendUrl)
       .then(res => {
         const person = res.data;
         this.setState({ person });
+        this.setState({ backendUrl });
       })
   }
 
@@ -25,12 +30,13 @@ export default class Profile extends React.Component {
       <form id="contact" action="">  
           <fieldset>
               <img src="https://randomuser.me/api/portraits/thumb/men/40.jpg"></img>
+              
           </fieldset>              
           <fieldset>
               <input placeholder="Your Name" type="text" tabIndex="1" disabled value={ this.state.person.doctor_name?this.state.person.doctor_name : this.state.person.name } />
           </fieldset>
           <fieldset>
-              <input placeholder="Phone" type="text" tabIndex="2" disabled value={ this.state.phone  } />
+              <input placeholder="Phone" type="text" tabIndex="2" disabled value={ this.state.person.phone  } />
           </fieldset>
           <fieldset>
               <input placeholder="Your Email Address" type="email" tabIndex="3" disabled />

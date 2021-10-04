@@ -13,6 +13,7 @@ RUN npm install --only=production
 # RUN npm ci --only=production
 
 #RUN npm audit fix
+RUN export NODE_ENV=production
 
 ENV PORT=8080
 ENV BACKEND_URL="svc-awesome-clinic-backend"

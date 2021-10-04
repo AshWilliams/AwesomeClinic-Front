@@ -12,6 +12,7 @@ import MyAppointments from './components/pages/MyAppointments'
 import './App.css';
 
 function App() {
+  require('dotenv').config();
   return (
     <div className="body-wrap">
       <Router>
