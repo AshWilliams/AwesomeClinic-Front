@@ -1,6 +1,7 @@
 import App from '../App';
 import MenuBar from '../components/navigations/MenuBar'
 import Profile from '../data/Profile'
+import AppointmentList from '../data/AppointmentList'
 import MyProfile from '../components/pages/MyProfile'
 import MyAppointments from '../components/pages/MyAppointments'
 
@@ -56,6 +57,16 @@ it("MyAppointments check h2 element", () => {
   expect(wrapper.contains(h)).toEqual(true);
 });
 
+//AppointmentList
+it("AppointmentList renders without crashing", () => {
+  shallow(<AppointmentList />);
+});
+it("AppointmentList check for doctor Sergio Palma", () => {
+  const wrapper = shallow(<MyAppointments />);
+  const doctor = "Sergio Palma";
+  expect(wrapper.contains(doctor)).toEqual(true);
+});
+
 
 //Profile
 it("Profile renders without crashing", () => {
@@ -66,4 +77,10 @@ it("Profile check static image placeholder", () => {
   const wrapper = shallow(<Profile />);
   const pic = <img src="https://randomuser.me/api/portraits/thumb/men/40.jpg"></img>;
   expect(wrapper.contains(pic)).toEqual(true);
+});
+
+it("Profile check for Robert Rozas Navarro", () => {
+  const wrapper = shallow(<Profile />);
+  const name = "Robert Rozas Navarro";
+  expect(wrapper.contains(name)).toEqual(true);
 });
