@@ -21,7 +21,7 @@ This is to install all the dependencies required to run the library.
 
 5. Head to `localhost:3000` to check out the application
 
-Docker Image Frontend: `ashwilliams/awesome-clinic-front:react` https://hub.docker.com/repository/docker/ashwilliams/awesome-clinic-front
+Docker Image Frontend: `ashwilliams/awesome-clinic-front:react` https://hub.docker.com/repository/docker/ashwilliams/awesome-clinic-front <br/>
 Docker Image Backend: `ashwilliams/awesome-clinic-backend:flask` https://hub.docker.com/repository/docker/ashwilliams/awesome-clinic-backend
 
 
