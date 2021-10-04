@@ -5,7 +5,7 @@ import AppointmentList from '../data/AppointmentList'
 import MyProfile from '../components/pages/MyProfile'
 import MyAppointments from '../components/pages/MyAppointments'
 
-import { configure,shallow } from "enzyme";
+import { configure, shallow, mount } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 configure({ adapter: new Adapter() });
 
@@ -57,14 +57,16 @@ it("MyAppointments check h2 element", () => {
   expect(wrapper.contains(h)).toEqual(true);
 });
 
+it("MyAppointments check for doctor th ", () => {
+  const wrapper = shallow(<MyAppointments />);
+  const doctor = <th>Doctor</th>;
+  expect(wrapper.contains(doctor)).toEqual(true);
+});
+
+
 //AppointmentList
 it("AppointmentList renders without crashing", () => {
   shallow(<AppointmentList />);
-});
-it("AppointmentList check for doctor Sergio Palma", () => {
-  const wrapper = shallow(<MyAppointments />);
-  const doctor = "Sergio Palma";
-  expect(wrapper.contains(doctor)).toEqual(true);
 });
 
 
@@ -77,10 +79,4 @@ it("Profile check static image placeholder", () => {
   const wrapper = shallow(<Profile />);
   const pic = <img src="https://randomuser.me/api/portraits/thumb/men/40.jpg"></img>;
   expect(wrapper.contains(pic)).toEqual(true);
-});
-
-it("Profile check for Robert Rozas Navarro", () => {
-  const wrapper = shallow(<Profile />);
-  const name = "Robert Rozas Navarro";
-  expect(wrapper.contains(name)).toEqual(true);
 });
