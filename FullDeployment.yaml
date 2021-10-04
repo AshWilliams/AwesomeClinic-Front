@@ -1,0 +1,72 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: awesome-clinic-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: awesome-clinic-backend
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  minReadySeconds: 5 
+  template:
+    metadata:
+      labels:
+        app: awesome-clinic-backend
+    spec:
+      nodeSelector:
+        "beta.kubernetes.io/os": linux
+      containers:
+      - name: awesome-clinic-backend
+        image: ashwilliams/awesome-clinic-backend:flask
+        ports:
+        - containerPort: 5000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-awesome-clinic-backend
+spec:
+  ports:
+  - port: 80
+  selector:
+    app: awesome-clinic-backend
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: awesome-clinic-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: awesome-clinic-frontend
+  template:
+    metadata:
+      labels:
+        app: awesome-clinic-frontend
+    spec:
+      nodeSelector:
+        "beta.kubernetes.io/os": linux
+      containers:
+      - name: awesome-clinic-frontend
+        image: ashwilliams/awesome-clinic-front:react
+        ports:
+        - containerPort: 8080
+        env:
+        - name: BACKEND_URL
+          value: "svc-awesome-clinic-backend"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: awesome-clinic-frontend
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+  selector:
+    app: awesome-clinic-frontend

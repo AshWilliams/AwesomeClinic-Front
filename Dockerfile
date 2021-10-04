@@ -15,7 +15,7 @@ RUN npm install --only=production
 #RUN npm audit fix
 
 ENV PORT=8080
-ENV BACKEND_URL="BACKURL.CL"
+ENV BACKEND_URL="svc-awesome-clinic-backend"
 # Bundle app source
 COPY . .
 
